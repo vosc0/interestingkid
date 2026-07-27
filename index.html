@@ -2,502 +2,473 @@
 <html lang="en">
 
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Museum of Tiny Legend</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
-
-
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-
-body{
-
-    font-family:'Cinzel',serif;
-
-    overflow-x:hidden;
-
-    background:#e8dfcf;
-
-}
-
-
-
-/* =====================
-   MUSEUM MAIN SECTION
-===================== */
-
-
-.hero{
-
-    height:150vh;
-
-    position:relative;
-
-    overflow:hidden;
-
-}
-
-
-
-/* PARALLAX IMAGE */
-
-.background{
-
-    position:absolute;
-
-    width:100%;
-
-    height:130%;
-
-    object-fit:cover;
-
-    top:-15%;
-
-    left:0;
-
-    z-index:-2;
-
-    will-change:transform;
-
-}
-
-
-
-.hero::after{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:rgba(0,0,0,.12);
-
-    z-index:-1;
-
-}
-
-
-
-/* TITLE */
-
-.title{
-
-    position:absolute;
-
-    top:5%;
-
-    width:100%;
-
-    text-align:center;
-
-}
-
-
-
-.title h1{
-
-
-    color:#f8edcf;
-
-
-    font-size:clamp(35px,5vw,70px);
-
-
-    letter-spacing:5px;
-
-
-
-    text-shadow:
-
-    3px 3px 7px black,
-
-    0 0 15px rgba(0,0,0,.5);
-
-
-
-}
-
-
-
-/* STATS */
-
-.stats{
-
-
-    position:absolute;
-
-
-    top:50%;
-
-
-    right:6%;
-
-
-    transform:translateY(-50%);
-
-
-
-    width:340px;
-
-
-
-    color:#fff0d0;
-
-
-
-    font-size:clamp(18px,1.4vw,27px);
-
-
-
-    line-height:2;
-
-
-
-    text-shadow:
-
-    3px 3px 7px black;
-
-
-
-}
-
-
-
-.stats strong{
-
-
-    color:#ffd36a;
-
-
-
-    text-shadow:
-
-    2px 2px 5px black;
-
-
-
-}
-
-
-
-
-/* END TEXT */
-
-
-.footer{
-
-
-    position:absolute;
-
-
-    bottom:5%;
-
-
-    width:100%;
-
-
-    text-align:center;
-
-
-
-    color:#fff0d0;
-
-
-
-    font-size:clamp(16px,1.3vw,25px);
-
-
-
-    font-style:italic;
-
-
-
-    text-shadow:
-
-    3px 3px 7px black;
-
-
-
-}
-
-
-
-/* =====================
-   REVIEWS SECTION
-===================== */
-
-
-.reviews{
-
-
-    min-height:70vh;
-
-
-    background:#f5eee0;
-
-
-    padding:80px 10%;
-
-
-    color:#3d2b14;
-
-
-}
-
-
-
-.reviews h2{
-
-
-    text-align:center;
-
-
-    font-size:45px;
-
-
-    margin-bottom:50px;
-
-
-
-}
-
-
-
-.review-box{
-
-
-    max-width:800px;
-
-
-    margin:25px auto;
-
-
-    padding:25px;
-
-
-    border-left:5px solid #9b7435;
-
-
-
-    background:#fffaf0;
-
-
-
-    box-shadow:0 10px 25px rgba(0,0,0,.2);
-
-
-
-    font-size:20px;
-
-
-
-    line-height:1.7;
-
-
-
-}
-
-
-
-
-.stars{
-
-
-    color:#b88625;
-
-
-    font-size:25px;
-
-
-}
-
-
-
-
-@media(max-width:800px){
-
-
-.stats{
-
-    right:5%;
-
-    width:45%;
-
-    font-size:16px;
-
-}
-
-
-
-}
-
-
-
-
-</style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Museum of Tiny Legend</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Cinzel', serif;
+      overflow-x: hidden;
+      background: #e8dfcf;
+    }
+
+    /* =====================
+       MUSEUM MAIN SECTION
+    ===================== */
+
+    .hero {
+      height: 150vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* PARALLAX IMAGE */
+    .background {
+      position: absolute;
+      width: 100%;
+      height: 130%;
+      object-fit: cover;
+      top: -15%;
+      left: 0;
+      z-index: -2;
+      will-change: transform;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, .12);
+      z-index: -1;
+    }
+
+    /* TITLE */
+    .title {
+      position: absolute;
+      top: 5%;
+      width: 100%;
+      text-align: center;
+    }
+
+    .title h1 {
+      color: #f8edcf;
+      font-size: clamp(35px, 5vw, 70px);
+      letter-spacing: 5px;
+      text-shadow:
+        3px 3px 7px black,
+        0 0 15px rgba(0, 0, 0, .5);
+    }
+
+    /* STATS */
+    .stats {
+      position: absolute;
+      top: 50%;
+      right: 6%;
+      transform: translateY(-50%);
+      width: 340px;
+      color: #fff0d0;
+      font-size: clamp(18px, 1.4vw, 27px);
+      line-height: 2;
+      text-shadow: 3px 3px 7px black;
+    }
+
+    .stats strong {
+      color: #ffd36a;
+      text-shadow: 2px 2px 5px black;
+    }
+
+    /* END TEXT */
+    .footer {
+      position: absolute;
+      bottom: 5%;
+      width: 100%;
+      text-align: center;
+      color: #fff0d0;
+      font-size: clamp(16px, 1.3vw, 25px);
+      font-style: italic;
+      text-shadow: 3px 3px 7px black;
+    }
+
+    /* =====================
+       REVIEWS & FORUM SECTION
+    ===================== */
+
+    .reviews {
+      min-height: 70vh;
+      background: #f5eee0;
+      padding: 80px 10%;
+      color: #3d2b14;
+    }
+
+    .reviews h2 {
+      text-align: center;
+      font-size: 45px;
+      margin-bottom: 50px;
+    }
+
+    /* FORUM INTEGRATION STYLES */
+    .forum-card {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 25px;
+      background: #fffaf0;
+      border: 1px solid #d4c3a3;
+      border-left: 5px solid #9b7435;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, .1);
+    }
+
+    .forum-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: #3d2b14;
+    }
+
+    .forum-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .forum-card input[type="text"],
+    .forum-card textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #c8b99c;
+      border-radius: 4px;
+      background: #fdfbf7;
+      font-family: inherit;
+      font-size: 1rem;
+      color: #3d2b14;
+    }
+
+    .forum-card button {
+      background: #9b7435;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      transition: background 0.2s;
+    }
+
+    .forum-card button:hover {
+      background: #7a5a27;
+    }
+
+    .star-rating-picker {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 15px;
+    }
+
+    .star-rating-picker .star {
+      font-size: 2.2rem;
+      color: #d0c2a5;
+      cursor: pointer;
+      transition: color 0.15s ease;
+      user-select: none;
+    }
+
+    .star-rating-picker .star.hovered,
+    .star-rating-picker .star.selected {
+      color: #b88625;
+    }
+
+    .stars {
+      color: #b88625;
+      font-size: 25px;
+      margin-bottom: 8px;
+    }
+
+    .thread {
+      border-bottom: 1px solid #e2d7c3;
+      padding: 20px 0;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .thread:last-child {
+      border-bottom: none;
+    }
+
+    .thread-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin: 5px 0;
+      color: #7a5a27;
+    }
+
+    .meta {
+      font-size: 0.9rem;
+      color: #75634d;
+      margin-top: 8px;
+    }
+
+    @media(max-width:800px) {
+      .stats {
+        right: 5%;
+        width: 45%;
+        font-size: 16px;
+      }
+    }
+  </style>
 </head>
-
 
 <body>
 
-
-
-<section class="hero">
-
-
-<img class="background" src="background.jpg">
-
-
-<div class="title">
-
-<h1>Museum of Tiny Legend</h1>
-
-</div>
-
-
-
-<div class="stats">
-
-
-<p>
-Age:
-<strong>8</strong>
-</p>
-
-
-<p>
-Snack Consumption:
-<strong>98%</strong>
-</p>
-
-
-<p>
-Homework Completion:
-<strong>12%</strong>
-</p>
-
-
-<p>
-Bedtime Avoidance:
-<strong>Elite</strong>
-</p>
-
-
-<p>
-Likelihood of Eating A Banana:
-<strong>5.7%</strong>
-</p>
-
-
-</div>
-
-
-
-
-<div class="footer">
-
-😂 This exhibit has been preserved for future generations. 😂
-
-</div>
-
-
-
-</section>
-
-
-
-
-
-<section class="reviews">
-
-
-<h2>Visitor Reviews</h2>
-
-
-
-<div class="review-box">
-
-<div class="stars">
-★★★★★
-</div>
-
-"An incredible discovery. Never before have we documented such a tiny legend."
-
-</div>
-
-
-
-
-<div class="review-box">
-
-<div class="stars">
-★★★★☆
-</div>
-
-"The banana avoidance statistics are concerning, but impressive."
-
-</div>
-
-
-
-
-<div class="review-box">
-
-<div class="stars">
-★★★★★
-</div>
-
-"A historic exhibit. Future generations will study this moment."
-
-</div>
-
-
-
-</section>
-
-
-
-
-
-
-<script>
-
-
-// REAL SCROLL PARALLAX
-
-const image = document.querySelector(".background");
-
-
-window.addEventListener("scroll",()=>{
-
-
-    let scroll = window.pageYOffset;
-
-
-    image.style.transform =
-    `translateY(${scroll * 0.35}px)`;
-
-
-
-});
-
-
-
-</script>
-
-
+  <section class="hero">
+    <img class="background" src="background.jpg" alt="Exhibit Background">
+
+    <div class="title">
+      <h1>Museum of Tiny Legend</h1>
+    </div>
+
+    <div class="stats">
+      <p>Age: <strong>8</strong></p>
+      <p>Snack Consumption: <strong>98%</strong></p>
+      <p>Homework Completion: <strong>12%</strong></p>
+      <p>Bedtime Avoidance: <strong>Elite</strong></p>
+      <p>Likelihood of Eating A Banana: <strong>5.7%</strong></p>
+    </div>
+
+    <div class="footer">
+      😂 This exhibit has been preserved for future generations. 😂
+    </div>
+  </section>
+
+  <section class="reviews">
+    <h2>Visitor Reviews</h2>
+
+    <!-- SUBMIT REVIEW FORM -->
+    <div class="forum-card">
+      <div class="forum-header-row">
+        <h3>Leave Your Review</h3>
+        <div>
+          <label for="username-input" style="font-size: 0.9rem; font-weight: bold;">Posting as:</label>
+          <input type="text" id="username-input" placeholder="Your Name" maxlength="25" style="width: 150px; margin: 0; padding: 6px;">
+        </div>
+      </div>
+
+      <!-- Star Picker -->
+      <label style="font-weight: bold; font-size: 0.95rem;">Rating (optional):</label>
+      <div class="star-rating-picker" id="star-picker">
+        <span class="star" data-value="1">&#9733;</span>
+        <span class="star" data-value="2">&#9733;</span>
+        <span class="star" data-value="3">&#9733;</span>
+        <span class="star" data-value="4">&#9733;</span>
+        <span class="star" data-value="5">&#9733;</span>
+      </div>
+
+      <input type="text" id="post-title" placeholder="Review Title (optional)">
+      <textarea id="post-body" rows="4" placeholder="Share your thoughts on this exhibit... (optional)"></textarea>
+      <button id="submit-post-btn">Publish Review</button>
+    </div>
+
+    <!-- LIVE DISCUSSIONS FEED INCLUDING ARCHIVED EXHIBIT REVIEWS -->
+    <div class="forum-card">
+      <div id="threads-container">Loading reviews...</div>
+    </div>
+  </section>
+
+  <!-- FIREBASE & PARALLAX SCRIPTS -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getFirestore, collection, addDoc, query, orderBy, onSnapshot, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+    // 1. FIREBASE CONFIGURATION
+    const FIREBASE_PROJECT_ID = "project1-bf78d"; 
+    const FIREBASE_API_KEY    = "AIzaSyAkwoO_UV8aK1A9sWO6JXQhzXe810Vyiyw";
+
+    const firebaseConfig = {
+      apiKey: FIREBASE_API_KEY,
+      authDomain: `${FIREBASE_PROJECT_ID}.firebaseapp.com`,
+      projectId: FIREBASE_PROJECT_ID,
+      storageBucket: `${FIREBASE_PROJECT_ID}.appspot.com`,
+      messagingSenderId: "000000000000",
+      appId: `1:000000000000:web:${FIREBASE_PROJECT_ID}`
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // Initial Museum Exhibit Reviews
+    const initialExhibitReviews = [
+      {
+        rating: 5,
+        body: '"AN INCREDIBLE DISCOVERY. NEVER BEFORE HAVE WE DOCUMENTED SUCH A TINY LEGEND."',
+        authorName: 'Museum Curator',
+        date: 'Archived Exhibit Review'
+      },
+      {
+        rating: 4,
+        body: '"THE BANANA AVOIDANCE STATISTICS ARE CONCERNING, BUT IMPRESSIVE."',
+        authorName: 'Senior Researcher',
+        date: 'Archived Exhibit Review'
+      },
+      {
+        rating: 5,
+        body: '"A HISTORIC EXHIBIT. FUTURE GENERATIONS WILL STUDY THIS MOMENT."',
+        authorName: 'Historian',
+        date: 'Archived Exhibit Review'
+      }
+    ];
+
+    // 2. USERNAME MANAGEMENT (LocalStorage)
+    const usernameInput = document.getElementById('username-input');
+    const savedName = localStorage.getItem('forum_username');
+    usernameInput.value = savedName ? savedName : "Visitor_" + Math.floor(1000 + Math.random() * 9000);
+
+    usernameInput.addEventListener('input', () => {
+      const name = usernameInput.value.trim() || "Anonymous";
+      localStorage.setItem('forum_username', name);
+    });
+
+    // 3. STAR RATING PICKER
+    let selectedRating = 0;
+    const stars = document.querySelectorAll('#star-picker .star');
+
+    stars.forEach(star => {
+      star.addEventListener('mouseover', () => {
+        const val = parseInt(star.getAttribute('data-value'));
+        highlightStars(val, 'hovered');
+      });
+
+      star.addEventListener('mouseout', () => {
+        clearStarClasses('hovered');
+      });
+
+      star.addEventListener('click', () => {
+        const val = parseInt(star.getAttribute('data-value'));
+        selectedRating = (selectedRating === val) ? 0 : val;
+        updateSelectedStars();
+      });
+    });
+
+    function highlightStars(count, className) {
+      stars.forEach(s => {
+        const val = parseInt(s.getAttribute('data-value'));
+        if (val <= count) s.classList.add(className);
+        else s.classList.remove(className);
+      });
+    }
+
+    function clearStarClasses(className) {
+      stars.forEach(s => s.classList.remove(className));
+    }
+
+    function updateSelectedStars() {
+      stars.forEach(s => {
+        const val = parseInt(s.getAttribute('data-value'));
+        if (val <= selectedRating) s.classList.add('selected');
+        else s.classList.remove('selected');
+      });
+    }
+
+    // 4. PUBLISH REVIEW
+    document.getElementById('submit-post-btn').addEventListener('click', async () => {
+      const title = document.getElementById('post-title').value.trim();
+      const body = document.getElementById('post-body').value.trim();
+      const author = usernameInput.value.trim() || "Anonymous";
+
+      if (!title && !body && selectedRating === 0) {
+        return alert("Please enter a title, review text, or select a star rating before publishing.");
+      }
+
+      try {
+        await addDoc(collection(db, "forum_threads"), {
+          title: title,
+          body: body,
+          rating: selectedRating,
+          authorName: author,
+          createdAt: serverTimestamp()
+        });
+
+        document.getElementById('post-title').value = '';
+        document.getElementById('post-body').value = '';
+        selectedRating = 0;
+        updateSelectedStars();
+
+      } catch (error) {
+        console.error("Error creating review: ", error);
+        alert("Failed to publish review. Make sure your Firestore rules allow public write access.");
+      }
+    });
+
+    // 5. REAL-TIME THREAD FEED
+    const threadsContainer = document.getElementById('threads-container');
+    const threadsQuery = query(collection(db, "forum_threads"), orderBy("createdAt", "desc"));
+
+    onSnapshot(threadsQuery, (snapshot) => {
+      threadsContainer.innerHTML = '';
+
+      // First render live incoming user submissions
+      snapshot.forEach((doc) => {
+        const data = doc.data();
+        const date = data.createdAt ? new Date(data.createdAt.seconds * 1000).toLocaleDateString() : 'Just now';
+        renderReviewCard(data.rating, data.title, data.body, data.authorName, date);
+      });
+
+      // Then append the original featured exhibit reviews at the bottom
+      initialExhibitReviews.forEach(review => {
+        renderReviewCard(review.rating, null, review.body, review.authorName, review.date);
+      });
+    }, (error) => {
+      console.error("Database connection error: ", error);
+      threadsContainer.innerHTML = "<p style='color:red;'>Could not connect to database. Check your Firestore configuration.</p>";
+    });
+
+    function renderReviewCard(rating, title, body, authorName, dateStr) {
+      let starsHTML = '';
+      if (rating && rating > 0) {
+        const filled = '&#9733;'.repeat(rating);
+        const empty = '&#9734;'.repeat(5 - rating);
+        starsHTML = `<div class="stars">${filled}${empty}</div>`;
+      }
+
+      const threadEl = document.createElement('div');
+      threadEl.className = 'thread';
+      threadEl.innerHTML = `
+        ${starsHTML}
+        ${title ? `<div class="thread-title">${escapeHTML(title)}</div>` : ''}
+        ${body ? `<p style="margin: 8px 0; white-space: pre-line;">${escapeHTML(body)}</p>` : ''}
+        <div class="meta">Reviewed by <strong>${escapeHTML(authorName)}</strong> &bull; ${dateStr}</div>
+      `;
+      threadsContainer.appendChild(threadEl);
+    }
+
+    function escapeHTML(str) {
+      return str.replace(/[&<>'"]/g, 
+        tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
+      );
+    }
+  </script>
+
+  <script>
+    // REAL SCROLL PARALLAX
+    const image = document.querySelector(".background");
+
+    window.addEventListener("scroll", () => {
+      let scroll = window.pageYOffset;
+      image.style.transform = `translateY(${scroll * 0.35}px)`;
+    });
+  </script>
 
 </body>
 
