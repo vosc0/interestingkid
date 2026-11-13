@@ -30,7 +30,6 @@
       overflow: hidden;
     }
 
-    /* PARALLAX IMAGE */
     .background {
       position: absolute;
       width: 100%;
@@ -50,7 +49,6 @@
       z-index: -1;
     }
 
-    /* TOP LEFT VIEW COUNTER */
     .view-counter-top {
       position: absolute;
       top: 3%;
@@ -70,7 +68,6 @@
       backdrop-filter: blur(4px);
     }
 
-    /* TITLE (CENTERED) */
     .title {
       position: absolute;
       top: 5%;
@@ -87,7 +84,6 @@
         0 0 15px rgba(0, 0, 0, .5);
     }
 
-    /* STATS */
     .stats {
       position: absolute;
       top: 50%;
@@ -105,7 +101,6 @@
       text-shadow: 2px 2px 5px black;
     }
 
-    /* END TEXT */
     .footer {
       position: absolute;
       bottom: 5%;
@@ -115,6 +110,128 @@
       font-size: clamp(16px, 1.3vw, 25px);
       font-style: italic;
       text-shadow: 3px 3px 7px black;
+    }
+
+    /* =====================
+       GALLERY WING (NEW)
+    ===================== */
+
+    .gallery {
+      background:
+        radial-gradient(ellipse at top, #4a3a24 0%, #2a2014 70%);
+      padding: 90px 6% 100px;
+      color: #f8edcf;
+      text-align: center;
+      border-top: 6px solid #9b7435;
+      border-bottom: 6px solid #9b7435;
+    }
+
+    .gallery h2 {
+      font-size: clamp(30px, 4vw, 45px);
+      letter-spacing: 4px;
+      text-shadow: 2px 2px 6px black;
+    }
+
+    .gallery .subtitle {
+      font-style: italic;
+      color: #e2cf9f;
+      margin: 12px 0 60px;
+      font-size: clamp(15px, 1.3vw, 20px);
+    }
+
+    .gallery-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 70px 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .exhibit {
+      width: min(380px, 100%);
+      cursor: zoom-in;
+      transition: transform .3s ease;
+    }
+
+    .exhibit:hover {
+      transform: translateY(-8px);
+    }
+
+    /* Gold museum frame */
+    .frame {
+      padding: 16px;
+      background: linear-gradient(135deg, #e9c56b, #9b7435 45%, #f3d98c 70%, #7a5a27);
+      box-shadow:
+        0 18px 35px rgba(0, 0, 0, .6),
+        inset 0 0 0 2px rgba(255, 240, 200, .5);
+      border-radius: 3px;
+    }
+
+    .frame-inner {
+      padding: 10px;
+      background: #f5eee0;
+      box-shadow: inset 0 0 12px rgba(0, 0, 0, .45);
+    }
+
+    .frame img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      background: #d8ccb3;
+    }
+
+    /* Little museum plaque */
+    .plaque {
+      width: 78%;
+      margin: 22px auto 0;
+      padding: 10px 12px;
+      background: linear-gradient(135deg, #d9b45a, #a98030);
+      color: #2a2014;
+      border: 1px solid #f3d98c;
+      box-shadow: 0 5px 12px rgba(0, 0, 0, .5);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .plaque strong {
+      display: block;
+      font-size: 16px;
+      letter-spacing: 1px;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(0, 0, 0, .88);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 14px;
+      padding: 24px;
+      cursor: zoom-out;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 92vw;
+      max-height: 80vh;
+      border: 8px solid #c9a24d;
+      box-shadow: 0 0 40px rgba(0, 0, 0, .8);
+    }
+
+    .lightbox p {
+      color: #f8edcf;
+      font-size: 18px;
+      letter-spacing: 1px;
+      text-align: center;
     }
 
     /* =====================
@@ -134,7 +251,6 @@
       margin-bottom: 50px;
     }
 
-    /* FORUM INTEGRATION STYLES */
     .forum-card {
       max-width: 800px;
       margin: 30px auto;
@@ -247,6 +363,14 @@
         width: 45%;
         font-size: 16px;
       }
+
+      .reviews {
+        padding: 60px 5%;
+      }
+
+      .gallery-grid {
+        gap: 50px;
+      }
     }
   </style>
 </head>
@@ -256,12 +380,10 @@
   <section class="hero">
     <img class="background" src="background.jpg" alt="Exhibit Background">
 
-    <!-- TOP LEFT VIEWS COUNTER BADGE -->
     <div class="view-counter-top">
       views: <span id="visitor-count">1</span>
     </div>
 
-    <!-- CENTERED TITLE -->
     <div class="title">
       <h1>Museum of Tiny Legend</h1>
     </div>
@@ -279,10 +401,21 @@
     </div>
   </section>
 
+  <!-- GALLERY WING -->
+  <section class="gallery" id="gallery">
+    <h2>The Portrait Wing</h2>
+    <p class="subtitle">Rare portraits from across the eras. Click an exhibit to view it up close.</p>
+    <div class="gallery-grid" id="gallery-grid"></div>
+  </section>
+
+  <div class="lightbox" id="lightbox">
+    <img id="lightbox-img" src="" alt="">
+    <p id="lightbox-caption"></p>
+  </div>
+
   <section class="reviews">
     <h2>Visitor Reviews</h2>
 
-    <!-- SUBMIT REVIEW FORM -->
     <div class="forum-card">
       <div class="forum-header-row">
         <h3>Leave Your Review</h3>
@@ -292,7 +425,6 @@
         </div>
       </div>
 
-      <!-- Star Picker -->
       <label style="font-weight: bold; font-size: 0.95rem;">Rating (optional):</label>
       <div class="star-rating-picker" id="star-picker">
         <span class="star" data-value="1">&#9733;</span>
@@ -307,13 +439,12 @@
       <button id="submit-post-btn">Publish Review</button>
     </div>
 
-    <!-- LIVE DISCUSSIONS FEED INCLUDING ARCHIVED EXHIBIT REVIEWS -->
     <div class="forum-card">
       <div id="threads-container">Loading reviews...</div>
     </div>
   </section>
 
-  <!-- FIREBASE & PARALLAX SCRIPTS -->
+  <!-- FIREBASE SCRIPT (unchanged) -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
     import { getFirestore, collection, addDoc, query, orderBy, onSnapshot, serverTimestamp, doc, setDoc, increment } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
@@ -359,7 +490,6 @@
 
     trackVisit();
 
-    // Initial Museum Exhibit Reviews
     const initialExhibitReviews = [
       {
         rating: 5,
@@ -381,7 +511,7 @@
       }
     ];
 
-    // 3. USERNAME MANAGEMENT (LocalStorage)
+    // 3. USERNAME MANAGEMENT
     const usernameInput = document.getElementById('username-input');
     const savedName = localStorage.getItem('forum_username');
     usernameInput.value = savedName ? savedName : "Visitor_" + Math.floor(1000 + Math.random() * 9000);
@@ -516,6 +646,44 @@
     window.addEventListener("scroll", () => {
       let scroll = window.pageYOffset;
       image.style.transform = `translateY(${scroll * 0.35}px)`;
+    });
+
+    // =====================
+    // GALLERY WING
+    // Edit the title/note of any exhibit to whatever you like.
+    // Keep the image files in the same folder as index.html.
+    // =====================
+    const exhibits = [
+      { src: "Screenshot_2026-11-13_154535.png", title: "Exhibit A", note: "The Curly Era" },
+      { src: "anii5.png", title: "Exhibit B", note: "Portrait of a Serious Scholar" },
+      { src: "Screenshot_2026-11-13_162251.png", title: "Exhibit C", note: "The Unimpressed Gentleman" }
+    ];
+
+    const grid = document.getElementById("gallery-grid");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const lightboxCaption = document.getElementById("lightbox-caption");
+
+    exhibits.forEach(ex => {
+      const el = document.createElement("figure");
+      el.className = "exhibit";
+      el.innerHTML = `
+        <div class="frame"><div class="frame-inner">
+          <img src="${ex.src}" alt="${ex.title}: ${ex.note}" loading="lazy">
+        </div></div>
+        <figcaption class="plaque"><strong>${ex.title}</strong>${ex.note}</figcaption>
+      `;
+      el.addEventListener("click", () => {
+        lightboxImg.src = ex.src;
+        lightboxCaption.textContent = `${ex.title} \u2014 ${ex.note}`;
+        lightbox.classList.add("open");
+      });
+      grid.appendChild(el);
+    });
+
+    lightbox.addEventListener("click", () => lightbox.classList.remove("open"));
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape") lightbox.classList.remove("open");
     });
   </script>
 
